@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.gk.model.comm">
+	<class name="PermissionP" table="t_comm_permission_p">
+		<id name="id" type="string" column="id" length="40">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="permissionName" type="string">
+			<column name="permission_name" length="150" />
+		</property>
+		<property name="permissionIntro" type="text">
+			<column name="permission_intro" />
+		</property>
+		<property name="permissionStatus" type="int">
+			<column name="permission_status" default="1" not-null="true" sql-type="int"/>
+		</property>
+		<property name="indexs" type="int">
+			<column name="indexs" default="0" not-null="true" sql-type="int"/>
+		</property>
+		
+		<property name="state" type="int">
+			<column name="state" default="1" not-null="true" sql-type="int"/>
+		</property>
+		<property name="createId" type="string">
+			<column name="create_id" length="40" />
+		</property>
+		<property name="createDate" type="timestamp">
+			<column name="create_date" />
+		</property>
+		<property name="updateId" type="string">
+			<column name="update_id" length="40" />
+		</property>
+		<property name="updateDate" type="timestamp">
+			<column name="update_date" />
+		</property>
+		<property name="deleteId" type="string">
+			<column name="delete_id" length="40" />
+		</property>
+		<property name="deleteDate" type="timestamp">
+			<column name="delete_date" />
+		</property>
+	</class>
+</hibernate-mapping>

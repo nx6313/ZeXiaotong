@@ -1,0 +1,257 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	height: calc(100% - 11px);
+	overflow: hidden;
+	background: #fff;
+}
+
+a.main_link {
+	color: #DD5B5B;
+}
+
+a.main_link :hover {
+	color: #0EA40E;
+}
+
+.page-main {
+	position: relative;
+	width: calc(100% - 50px);
+	margin: 0 auto;
+	padding: 10px 10px;
+	background: #fff;
+	overflow: auto;
+}
+
+.bread-ceil {
+	position: fixed;
+	top: 0px;
+	background: #fff;
+	width: calc(100% - 40px);
+	padding: 10px 0px 0px 0px;
+	z-index: 9999;
+}
+
+.bread-ceil-footer {
+	width: 100%;
+	height: 10px;
+	z-index: 9998;
+	margin-top: 4px;
+	background: url("../images/main_bg.png");
+	background-size: auto 100%;
+}
+
+.content-main {
+	position: relative;
+	margin: 42px 0px 0px 0px;
+}
+
+.page-pop {
+	position: relative;
+	width: calc(100% - 50px);
+	height: calc(100% + 11px);
+	margin: 0 auto;
+	padding: 10px 10px;
+	background: #fff;
+	overflow: auto;
+}
+
+.default-pop {
+	position: relative;
+	height: calc(100% + 11px);
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+}
+
+.default-pop-dark {
+	position: relative;
+	height: calc(100% + 11px);
+	padding: 0;
+	margin: 0;
+	overflow: auto;
+	background: #393D49;
+	color: #F4F4F4;
+}
+
+.tableLeftTh {
+	background: #F2F2F2;
+}
+
+.mr10 {
+	margin-right: 10px;
+}
+
+.mb6 {
+	margin-bottom: 6px;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.searchWrap {
+	position: relative;
+	width: calc(100% - 2px);
+	display: inline-block;
+	border: 1px #77A9E0 solid;
+	border-radius: 4px;
+	padding: 6px 0px;
+	background: #DEEBAD;
+}
+
+#mainDataWarp td img {
+	width: 140px;
+	height: 100px;
+}
+
+#mainDataWarp td a {
+	color: #1E87D8;
+	text-decoration: underline;
+}
+
+#mainDataWarp td a:hover {
+	color: #7BB9E9;
+	text-decoration: none;
+}
+
+#tableDataTipHtml {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #ECF3F7;
+	color: #282828;
+	border: 1px #BFD6E3 solid;
+	border-radius: 2px;
+	box-shadow: 0px 0px 10px rgba(119, 119, 119, .6);
+	opacity: .9;
+	padding: 10px 6px;
+	pointer-events: none;
+	display: none;
+}
+
+.excelFileWrap {
+	width: 600px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.schoolInfoLogoWrap {
+	height: 89px;
+	margin-left: 10px;
+	border: 1px #E6E6E6 solid;
+	background: #FBFBFB;
+}
+
+.schoolInfoLogo {
+	width: 80px;
+	height: 80px;
+	border: 1px #C8C8C8 dashed;
+	margin: 0 auto;
+	margin-top: 3px;
+	background: #FFFFFF;
+	text-align: center;
+	overflow: hidden;
+}
+
+.schoolInfoLogo:hover {
+	border: 1px #B9B9B9 dashed;
+	background: #E9F3EB;
+}
+
+.schoolInfoLogo span {
+	display: inline-block;
+	font-size: 12px;
+	margin-top: 20px;
+	text-shadow: 0px 0px 6px rgba(0, 0, 0, .3);
+	cursor: pointer;
+}
+
+.schoolInfoLogo img {
+	width: 80px;
+	height: 80px;
+}
+
+.formRequired {
+	color: #E32B21;
+}
+
+.selectBox {
+	height: 24px;
+	line-height: 24px;
+	width: 100px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.selectBox a.selectBoxA {
+	text-decoration: none;
+	outline: none;
+	hide-focus: expression(this.hideFocus = true);
+	display: block;
+	background: url(../images/selectBG.gif) left top;
+	padding-left: 10px;
+	color: #282828;
+	line-height: 24px !important;
+	line-height: 26px;
+	height: 24px;
+	overflow: hidden;
+}
+
+.selectBox a:hover.selectBoxA {
+	background-position: left -24px;
+}
+
+.selectBox a:hover.open, .selectBox a.open {
+	background-position: left -48px;
+}
+
+.selectBox p {
+	margin: 0;
+	padding: 0;
+	display: none;
+	position: absolute;
+	width: 100px;
+	background: url(../images/selectBG.gif) left bottom;
+	padding-bottom: 6px;
+	z-index: 1000;
+	max-height: 240px;
+	overflow: auto;
+}
+
+.selectBox p a.selectBoxA {
+	color: #79a2bd;
+	background-position: left -160px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.selectBox p a.occupied {
+	color: #A8AEAD;
+}
+
+.selectBox p a.currentSelected {
+	background-position: left -96px;
+	color: #fff;
+}
+
+.selectBox p a:hover.selectBoxA {
+	background-position: left -72px;
+	color: #fff;
+}
+
+.mCSB_inside .mCSB_container {
+	margin-right: 0px !important;
+}

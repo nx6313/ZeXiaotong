@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="public" extends="main">
+		<!-- 跳转到用户登录 -->
+		<action name="skipLogin" class="userAction" method="skipLogin">
+			<result name="success">/WEB-INF/jsp/comm/login.jsp</result>
+		</action>
+		<!-- 用户执行登录 -->
+		<action name="login" class="userAction" method="login"></action>
+		<!-- 退出登录 -->
+		<action name="exitLogin" class="userAction" method="exitLogin"></action>
+		<!-- 清除用户默认Action Session -->
+		<action name="clearDefaultAction" class="userAction" method="clearDefaultAction"></action>
+		<!-- 跳转到用户程序首页 -->
+		<action name="skipIndex" class="userAction" method="skipIndex">
+			<result name="success">/WEB-INF/jsp/comm/index.jsp</result>
+		</action>
+		<!-- 跳转404/没有权限等公共页面 -->
+		<action name="toCommPage" class="commAction" method="toCommPage">
+			<result name="404">/404.jsp</result>
+			<result name="noPermission">/no_permission.jsp</result>
+		</action>
+		<!-- 超級管理員登錄，進行基礎權限補全操作 -->
+		<action name="fillLimitPer" class="commAction" method="fillLimitPer"></action>
+		<!-- 文件上传 -->
+		<action name="uploadExcelFile" class="commAction" method="uploadExcelFile"></action>
+		<!-- 跳转到用户管理 -->
+		<action name="toUserManager" class="userAction" method="toUserManager">
+			<result name="success">/WEB-INF/jsp/user/userManager.jsp</result>
+		</action>
+		<!-- 查询获取用户列表或者用户信息 -->
+		<action name="searchUserInfoOrList" class="userAction"
+			method="searchUserInfoOrList">
+		</action>
+		<!-- 跳转到添加用户 -->
+		<action name="skipUserAdd" class="userAction" method="skipUserAdd">
+			<result name="success">/WEB-INF/jsp/user/userAdd.jsp</result>
+		</action>
+		<!-- 添加用户 -->
+		<action name="doUserAdd" class="userAction" method="doUserAdd">
+		</action>
+		<!-- 删除用户 -->
+		<action name="deleteUser" class="userAction" method="deleteUser">
+		</action>
+	</package>
+</struts>

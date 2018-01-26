@@ -1,0 +1,15 @@
+.agencyListWrap {
+	margin-bottom: 4px;
+}
+
+.agencyListWrap button {
+	margin-bottom: 6px;
+}
+
+.studentCardManagerMainWarp {
+	display: none;
+}
+
+#managerSeeNoAgency {
+	display: none;
+}

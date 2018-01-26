@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.gk.model.student">
+	<class name="Academy" table="t_student_academy">
+		<id name="id" type="string" column="id" length="40">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="schoolLogo" type="string">
+			<column name="school_logo" length="500" />
+		</property>
+		<property name="schoolName" type="string">
+			<column name="school_name" />
+		</property>
+		<property name="schoolType" type="string">
+			<column name="school_type" />
+		</property>
+		<property name="specialAttr" type="string">
+			<column name="special_attr" />
+		</property>
+		<property name="location" type="string">
+			<column name="location" />
+		</property>
+		<property name="education" type="string">
+			<column name="education" />
+		</property>
+		<property name="educationType" type="string">
+			<column name="education_type" />
+		</property>
+		<property name="admissionOfficePhone" type="string">
+			<column name="admission_office_phone" />
+		</property>
+		<property name="email" type="string">
+			<column name="email" />
+		</property>
+		<property name="address" type="string">
+			<column name="address" />
+		</property>
+		<property name="admissionNet" type="string">
+			<column name="admission_net" />
+		</property>
+		<property name="intro" type="string">
+			<column name="intro" />
+		</property>
+		<property name="employment" type="string">
+			<column name="employment" />
+		</property>
+		<property name="globalHeat" type="string">
+			<column name="global_heat" />
+		</property>
+		<property name="classHeat" type="string">
+			<column name="class_heat" />
+		</property>
+		
+		<property name="state" type="int">
+			<column name="state" default="1" not-null="true" sql-type="int"/>
+		</property>
+		<property name="createId" type="string">
+			<column name="create_id" length="40" />
+		</property>
+		<property name="createDate" type="timestamp">
+			<column name="create_date" />
+		</property>
+		<property name="updateId" type="string">
+			<column name="update_id" length="40" />
+		</property>
+		<property name="updateDate" type="timestamp">
+			<column name="update_date" />
+		</property>
+		<property name="deleteId" type="string">
+			<column name="delete_id" length="40" />
+		</property>
+		<property name="deleteDate" type="timestamp">
+			<column name="delete_date" />
+		</property>
+	</class>
+</hibernate-mapping>

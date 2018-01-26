@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<include file="struts-public.xml"></include>
+	<include file="struts-student.xml"></include>
+	<include file="struts-permission.xml"></include>
+	<include file="struts-school.xml"></include>
+
+	<!-- proMode -->
+	<constant name="struts.devMode" value="true"></constant>
+	<constant name="struts.multipart.maxSize" value="200097152"></constant>
+	<package name="main" extends="struts-default" namespace="/">
+		<!-- 拦截器 -->
+		<interceptors>
+			<interceptor name="loginInterceptor"
+				class="cn.gk.action.interceptor.LoginInterceptor" />
+			<interceptor-stack name="loginDefaultStack">
+				<interceptor-ref name="loginInterceptor">
+					<param name="excludeMethods">login</param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">error</param>
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="loginDefaultStack" />
+		<!-- <default-action-ref name="error" /> -->
+
+		<global-results>
+			<result name="login">/login_re.jsp</result>
+			<result name="hasLogin">/index_re.jsp</result>
+		</global-results>
+		<action name="pagenotfound">
+			<result type="redirect">/404.jsp</result>
+		</action>
+		<!-- <action name="error">
+			<result type="redirect">/404.jsp</result>
+		</action> -->
+	</package>
+</struts>

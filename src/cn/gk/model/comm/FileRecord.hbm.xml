@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.gk.model.comm">
+	<class name="FileRecord" table="t_comm_file_record">
+		<id name="id" type="string" column="id" length="40">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="fileName" type="string">
+			<column name="file_name" />
+		</property>
+		<property name="oldFileName" type="string">
+			<column name="old_file_name" />
+		</property>
+		<property name="fileExtName" type="string">
+			<column name="file_ext_name" />
+		</property>
+		<property name="fileSize" type="long">
+			<column name="file_size" />
+		</property>
+		<property name="filePath" type="string">
+			<column name="file_path" />
+		</property>
+		
+		<property name="state" type="int">
+			<column name="state" default="1" not-null="true" sql-type="int"/>
+		</property>
+		<property name="createId" type="string">
+			<column name="create_id" length="40" />
+		</property>
+		<property name="createDate" type="timestamp">
+			<column name="create_date" />
+		</property>
+		<property name="updateId" type="string">
+			<column name="update_id" length="40" />
+		</property>
+		<property name="updateDate" type="timestamp">
+			<column name="update_date" />
+		</property>
+		<property name="deleteId" type="string">
+			<column name="delete_id" length="40" />
+		</property>
+		<property name="deleteDate" type="timestamp">
+			<column name="delete_date" />
+		</property>
+	</class>
+</hibernate-mapping>

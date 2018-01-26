@@ -1,0 +1,49 @@
+.layui-form-switch {
+	width: 140px !important;
+	overflow: hidden;
+}
+
+.layui-form-switch em {
+	width: auto !important;
+	margin-right: 5px !important;
+}
+
+.layui-form-onswitch i {
+	left: 130px !important;
+}
+
+.layui-form-checkbox {
+	margin-bottom: 10px !important;
+}
+
+.perCSetArea {
+	background: #F5F8FC;
+	margin-top: 4px;
+	margin-bottom: 18px;
+	border-radius: 2px;
+	border-top: 4px #DBDBDB outset;
+	border-bottom: 4px #DBDBDB inset;
+	padding: 10px 10px 20px 10px;
+	overflow-y: auto;
+}
+
+.perCSetTitle {
+	position: relative;
+	top: -6px;
+	text-align: center;
+	font-size: 12px;
+}
+
+.perCSetContent {
+	margin-top: 4px;
+}
+
+.perCSetAreaLoading {
+	position: relative;
+	top: calc(50% - 24px);
+	left: calc(50% - 24px);
+}
+
+.layui-form-switch {
+	margin-top: 0px !important;
+}

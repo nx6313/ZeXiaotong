@@ -1,0 +1,17 @@
+.dragToBlockquoteCss {
+	border-left: 5px #DB281B solid;
+	background: rgba(219, 40, 27, .2);
+}
+
+.dragToInputCss {
+	border: 1px #DB281B dashed;
+	background: rgba(219, 40, 27, .2);
+}
+
+#userManagerListWarp {
+	display: none;
+}
+
+#userManagerInfoWarp {
+	display: none;
+}

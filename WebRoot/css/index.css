@@ -1,0 +1,145 @@
+div.indexTop {
+	height: 100%;
+	background-color: #006600;
+	text-align: center;
+}
+
+div.pageHeader {
+	position: relative;
+	background-color: #006600;
+	z-index: 9999999;
+}
+
+div.indexTop div.top {
+	width: 100%;
+	height: 24px;
+	background: #067C06;
+}
+
+div.indexTop div.top div.topBtnItem {
+	height: 100%;
+	float: right;
+	color: #FAFAFA;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 24px;
+	padding: 0 20px;
+	cursor: pointer;
+	background-color: #CB4825;
+	font-weight: bold;
+}
+
+div.indexTop div.top div.topBtnItem:hover {
+	background-color: #E76643;
+}
+
+div.indexTop div.top div.topSpanItem {
+	height: 100%;
+	float: right;
+	color: #FAFAFA;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 24px;
+	padding: 0 20px;
+	cursor: pointer;
+	background-color: #098D09;
+	font-weight: bold;
+}
+
+div.indexTop div.top div.topSpanItem a {
+	color: #F2F3EF;
+	text-decoration: underline;
+}
+
+div.indexTop div.top div.topSpanItem a:hover {
+	color: #FC8404;
+}
+
+.borR {
+	border-right: 1px dotted #067C06;
+}
+
+@media ( max-width : 505px) {
+	.borR {
+		display: none;
+	}
+}
+
+div.indexTop div.middle {
+	height: 70px;
+}
+
+div.indexTop div.middle div.logo {
+	float: left;
+	text-align: center;
+}
+
+div.indexTop div.middle div.logo img {
+	margin: 30px 0 0 40px;
+}
+
+div.indexTop div.middle div.daoJiTime {
+	float: left;
+	margin-left: 200px;
+}
+
+@media ( max-width : 1140px) {
+	div.indexTop div.middle div.daoJiTime {
+		display: none;
+	}
+}
+
+div.indexTop div.middle div.daoJiTime div.daoJiLable {
+	float: left;
+	margin: 50px 0 0 20px;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 15px;
+}
+
+div#gaoKaoTime {
+	float: left;
+	margin: 44px 0 0 8px;
+	padding: 0 10px;
+	font-size: 25px;
+	background-color: #143E14;
+	color: #F70307;
+	border-radius: 2px;
+	box-shadow: 0px 0px 6px rgba(68, 68, 68, .4);
+}
+
+div.indexTop div.foot {
+	clear: both;
+	height: 40px;
+	background-color: #0D530D;
+	margin-top: 26px;
+}
+
+.mainBg {
+	position: relative;
+	top: 0px;
+	width: 85%;
+	height: 100%;
+	margin: 0 auto;
+	box-shadow: 0px 0px 20px rgba(68, 68, 68, .8);
+	width: 85%;
+	background: #fff;
+}
+
+.main {
+	background: #EAFAFF;
+	z-index: 1000;
+}
+
+#workspace {
+	border: 0px;
+	position: absolute;
+}
+
+.layui-form-pane .layui-form-label {
+	width: 140px;
+}
+
+.layui-form-pane .layui-input-block {
+	margin-left: 140px;
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.gk.model.comm">
+	<class name="UserInfo" table="t_comm_user_info">
+		<id name="id" type="string" column="id" length="40">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="indexs" type="int" not-null="true">
+			<column name="indexs" sql-type="int"/>
+		</property>
+		<property name="userName" type="string">
+			<column name="user_name" length="100" />
+		</property>
+		<property name="type" type="int" not-null="true">
+			<column name="type" default="1" />
+		</property>
+		<property name="registerDate" type="timestamp">
+			<column name="register_date" />
+		</property>
+		<property name="father" type="string">
+			<column name="father" length="100" />
+		</property>
+		<property name="memo" type="string">
+			<column name="memo" length="100" />
+		</property>
+		<property name="agencyType" type="string">
+			<column name="agency_type" length="100" />
+		</property>
+		<property name="count" type="int" >
+			<column name="count" default="0" />
+		</property>
+		<property name="pass" type="string">
+			<column name="pass" length="100" />
+		</property>
+		<property name="agencyName" type="string">
+			<column name="agency_name" length="100" />
+		</property>
+		<property name="userCardType" type="string">
+			<column name="user_card_type" length="100" />
+		</property>
+		<property name="startCode" type="int" >
+			<column name="start_code" default="0" />
+		</property>
+		<property name="endCode" type="int" >
+			<column name="end_code" default="0" />
+		</property>
+		<property name="province" type="string">
+			<column name="province" length="100" />
+		</property>
+		<property name="city" type="string">
+			<column name="city" length="100" />
+		</property>
+		<property name="area" type="string">
+			<column name="area" length="100" />
+		</property>
+		<property name="tel" type="string">
+			<column name="tel" length="100" />
+		</property>
+		<property name="mobile" type="string">
+			<column name="mobile" length="100" />
+		</property>
+		<property name="email" type="string">
+			<column name="email" length="100" />
+		</property>
+		
+		<property name="state" type="int">
+			<column name="state" default="1" not-null="true" sql-type="int"/>
+		</property>
+		<property name="createId" type="string">
+			<column name="create_id" length="40" />
+		</property>
+		<property name="createDate" type="timestamp">
+			<column name="create_date" />
+		</property>
+		<property name="updateId" type="string">
+			<column name="update_id" length="40" />
+		</property>
+		<property name="updateDate" type="timestamp">
+			<column name="update_date" />
+		</property>
+		<property name="deleteId" type="string">
+			<column name="delete_id" length="40" />
+		</property>
+		<property name="deleteDate" type="timestamp">
+			<column name="delete_date" />
+		</property>
+	</class>
+</hibernate-mapping>

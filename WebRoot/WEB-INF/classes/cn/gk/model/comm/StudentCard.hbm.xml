@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.gk.model.comm">
+	<class name="StudentCard" table="t_comm_student_card">
+		<id name="id" type="string" column="id" length="40">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="aboutAgencyId" type="string">
+			<column name="about_agency_id" length="40" />
+		</property>
+		<property name="cardStatus" type="int">
+			<column name="card_status" default="0" not-null="true" sql-type="int"/>
+		</property>
+		<property name="cardActiveTime" type="timestamp">
+			<column name="card_active_time"/>
+		</property>
+		<property name="cardNum" type="string">
+			<column name="card_num" />
+		</property>
+		<property name="accountNum" type="string">
+			<column name="account_num" />
+		</property>
+		<property name="passWord" type="string">
+			<column name="pass_word" />
+		</property>
+		<property name="userName" type="string">
+			<column name="user_name" />
+		</property>
+		<property name="familyType" type="int">
+			<column name="family_type" default="0" not-null="true" sql-type="int"/>
+		</property>
+		<property name="area" type="string">
+			<column name="area" />
+		</property>
+		<property name="schoolName" type="string">
+			<column name="school_name" />
+		</property>
+		<property name="classGrade" type="string">
+			<column name="class_grade" />
+		</property>
+		<property name="phoneNum" type="string">
+			<column name="phone_num" />
+		</property>
+		<property name="email" type="string">
+			<column name="email" />
+		</property>
+		<property name="balance" type="big_decimal">
+			<column name="balance" />
+		</property>
+		<property name="cardLevel" type="int">
+			<column name="card_level" default="1" not-null="true" sql-type="int"/>
+		</property>
+		<property name="normalScore" type="double">
+			<column name="normal_score" />
+		</property>
+		<property name="entranceScore" type="double">
+			<column name="entrance_score" />
+		</property>
+		<property name="myVocationalAssess" type="string">
+			<column name="my_vocational_assess" />
+		</property>
+		<property name="myAttentionSchool" type="string">
+			<column name="my_attention_school" />
+		</property>
+		<property name="myVolunteerChart" type="string">
+			<column name="my_volunteer_chart" />
+		</property>
+		
+		<property name="state" type="int">
+			<column name="state" default="1" not-null="true" sql-type="int"/>
+		</property>
+		<property name="createId" type="string">
+			<column name="create_id" length="40" />
+		</property>
+		<property name="createDate" type="timestamp">
+			<column name="create_date" />
+		</property>
+		<property name="updateId" type="string">
+			<column name="update_id" length="40" />
+		</property>
+		<property name="updateDate" type="timestamp">
+			<column name="update_date" />
+		</property>
+		<property name="deleteId" type="string">
+			<column name="delete_id" length="40" />
+		</property>
+		<property name="deleteDate" type="timestamp">
+			<column name="delete_date" />
+		</property>
+	</class>
+</hibernate-mapping>

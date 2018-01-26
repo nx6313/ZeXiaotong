@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="student" extends="main">
+		<!-- 跳转到学生会员卡管理 -->
+		<action name="toStudentCardManager" class="studentAction" method="toStudentCardManager">
+			<result name="success">/WEB-INF/jsp/user/studentCardManager.jsp</result>
+		</action>
+		<!-- 管理员登录，点击代理商选项卡按钮，获取对应代理商学生卡数据 -->
+		<action name="getStudentCardManagerData" class="studentAction" method="getStudentCardManagerData">
+		</action>
+		<!-- 跳转到学生会员卡管理 -->
+		<action name="doStudentCardAdd" class="studentAction" method="doStudentCardAdd">
+		</action>
+		<!-- 获取代理商学生卡分页数据 -->
+		<action name="getStudentCardPageData" class="studentAction" method="getStudentCardPageData">
+		</action>
+		<!-- 查询学生卡 -->
+		<action name="searchStudentCardData" class="studentAction" method="searchStudentCardData">
+		</action>
+		<!-- 学生卡激活 -->
+		<action name="skipStudentCardActive" class="studentAction" method="skipStudentCardActive">
+			<result name="success">/WEB-INF/jsp/user/studentCardActive.jsp</result>
+		</action>
+		<!-- 学生卡激活 -->
+		<action name="doStudentCardActive" class="studentAction" method="doStudentCardActive">
+		</action>
+	</package>
+</struts>

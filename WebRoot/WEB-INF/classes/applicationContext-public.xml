@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd   
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd   
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
+	http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd">
+	<context:annotation-config />
+	<context:component-scan base-package="cn.gk" />
+
+	<!-- 配置数据源 -->
+	<!-- <bean id="sqlDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@120.27.8.253:1521:EXAM">
+		</property>
+		<property name="user" value="nx6313" />
+		<property name="password" value="ngd6313xln" />
+	</bean> -->
+	<bean id="sqlDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl">
+			<value>jdbc:mysql://localhost:3306/zexiaotong?characterEncoding=utf8</value>
+		</property>
+		<property name="user" value="sa" />
+		<property name="password" value="nx6313" />
+		<property name="testConnectionOnCheckin" value="true"></property>
+	</bean>
+
+	<!-- hibernate4以后直接支持annotation -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="sqlDataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<!-- org.hibernate.dialect.Oracle9Dialect -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+			</props>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:/cn/gk/model/base/*.hbm.xml</value>
+				<value>classpath:/cn/gk/model/comm/*.hbm.xml</value>
+				<value>classpath:/cn/gk/model/student/*.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 开启AOP监听 只对当前配置文件有效 -->
+	<aop:aspectj-autoproxy expose-proxy="true" />
+
+	<!-- 开启注解事务 只对当前配置文件有效 -->
+	<tx:annotation-driven transaction-manager="sqlTxManager" />
+
+	<bean id="sqlTxManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<tx:advice id="sqlTxAdvice" transaction-manager="sqlTxManager">
+		<tx:attributes>
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="move*" propagation="REQUIRED" />
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="merge*" propagation="REQUIRED" />
+			<tx:method name="del*" propagation="REQUIRED" />
+			<tx:method name="restore*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="put*" propagation="REQUIRED" />
+			<tx:method name="use*" propagation="REQUIRED" />
+			<tx:method name="upload" propagation="REQUIRED" />
+			<tx:method name="act*" propagation="REQUIRED" />
+			<tx:method name="settle*" propagation="REQUIRED" />
+			<tx:method name="push*" propagation="REQUIRED" />
+			<tx:method name="fill*" propagation="REQUIRED" />
+			<!--hibernate4必须配置为开启事务 否则 getCurrentSession()获取不到 -->
+			<tx:method name="get*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="count*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="find*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="list*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="to*" propagation="REQUIRED" read-only="true" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:pointcut id="sqlTxPointcut"
+			expression="execution(public * cn..service..*.*(..))" />
+		<aop:advisor pointcut-ref="sqlTxPointcut" advice-ref="sqlTxAdvice" />
+	</aop:config>
+</beans>
+
+

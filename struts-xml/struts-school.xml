@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="school" extends="main">
+		<!-- 查看院校信息 -->
+		<action name="toSchoolRefer" class="schoolAction" method="toSchoolRefer">
+			<result name="success">/WEB-INF/jsp/school/schoolRefer.jsp</result>
+		</action>
+		<!-- 分页获取学校信息 -->
+		<action name="getSchoolDataByPage" class="schoolAction" method="getSchoolDataByPage"></action>
+		<!-- 跳转到学校信息添加 -->
+		<action name="skipSchoolReferAdd" class="schoolAction" method="skipSchoolReferAdd">
+			<result name="success">/WEB-INF/jsp/school/schoolReferAdd.jsp</result>
+		</action>
+		<!-- 执行学校信息添加 -->
+		<action name="doSchoolInfoAdd" class="schoolAction" method="doSchoolInfoAdd"></action>
+		<!-- 跳转到院校详情页 -->
+		<action name="skipSchoolDetail" class="schoolAction" method="skipSchoolDetail">
+			<result name="success">/WEB-INF/jsp/school/schoolReferDetail.jsp</result>
+		</action>
+		<!-- 跳转到院校修改页 -->
+		<action name="skipSchoolInfoUpdate" class="schoolAction" method="skipSchoolInfoUpdate">
+			<result name="success">/WEB-INF/jsp/school/schoolReferUpdate.jsp</result>
+		</action>
+		<!-- 执行学校信息删除 -->
+		<action name="deleteSchoolInfo" class="schoolAction" method="deleteSchoolInfo"></action>
+	</package>
+</struts>
